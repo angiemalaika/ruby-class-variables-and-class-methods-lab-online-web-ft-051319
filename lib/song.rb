@@ -4,6 +4,7 @@ class Song
   @@count = 0
   @@genres = []
   @@artists = []
+  
 
   def initialize(name,artist,genre)
     @name = name
@@ -34,4 +35,7 @@ class Song
     Hash[@@genres.collect { |genre| [genre, @@genres.count(genre)] }]
     
   end 
+  
+  @@artists.each_with_object(Hash.new(0)) do |e, total|
+      total[e] += 1
 end 
